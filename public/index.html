@@ -8,6 +8,8 @@
     <meta name="Description" content="Enter your description here" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="/assets/style.css">
     <title>SocketIO Chat App</title>
 </head>
@@ -28,16 +30,28 @@
                 <div id="output"></div>
             </div>
             <div class="inputWrapper">
-                <div class="handleWrapper"><input class="input mb-2" type="text" name="handle" id="handle"
+                <div class="handleWrapper flex-row"><input class="input mb-2" type="text" name="handle" id="handle"
                         placeholder="Type Handle here">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                        <label class="form-check-label" for="flexSwitchCheckDefault">Save?</label>
+                    </div>
                 </div>
-                <div class="messageWrapper">
+                <div class="messageWrapper" id="toBeScrolled">
                     <textarea name="message" id="message" class="input" placeholder="Type message here"></textarea>
-                    <!-- <input class="input" type="text" name="message" id="message"placeholder="Type message here"> -->
+                </div>
+                <div class="sendWrapper">
+                    <button class="btn sendBtn">SEND</button>
                 </div>
             </div>
         </div>
     </div>
+    <!-- <script src="https://cdn.socket.io/3.1.3/socket.io.min.js"
+        integrity="sha384-cPwlPLvBTa3sKAgddT6krw0cJat7egBga3DJepJyrLl4Q9/5WLra3rrnMcyTyOnh"
+        crossorigin="anonymous"></script> -->
+    <!-- <script src="https://cdn.socket.io/socket.io-1.0.0.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.3/socket.io.js"></script>
+    <script src="/clientScript.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/js/bootstrap.min.js"></script>
 </body>

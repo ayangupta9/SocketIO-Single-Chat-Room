@@ -91,7 +91,7 @@ h1 {
 .input {
   border: none;
   padding: 0.5em;
-  width: 100%;
+  /* width: 100%; */
   font-weight: 800;
   color: rgb(108, 0, 147);
   outline: none;
@@ -110,7 +110,15 @@ textarea.input {
   outline: none;
 }
 
+#output {
+  width: 100%;
+}
+
 #output p {
+  word-wrap: normal;
+  overflow-wrap: break-word;
+  /* flex-wrap: wrap; */
+  /* -ms-word-wrap: break-word; */
   padding: 14px 0px;
   margin: 0px 20px;
   border-bottom: 1px solid #e9e9e9;
@@ -119,4 +127,55 @@ textarea.input {
 
 #output strong {
   color: rgb(173, 0, 236);
+}
+
+.sendWrapper {
+  width: 100%;
+}
+
+.handleWrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.handleWrapper > input {
+  flex: 1;
+}
+
+.sendBtn {
+  width: 100%;
+  background-color: rgb(108, 0, 147);
+  color: white;
+}
+
+.messageWrapper > textarea {
+  width: 100%;
+}
+/*
+.handleWrapper > button {
+  margin: 0.3em;
+  outline: none;
+  border: 0px;
+  border-radius: 3px;
+  background-color: #cccccc;
+} */
+
+#flexSwitchCheckDefault:focus {
+  background-color: rgb(108, 0, 147);
+  border: solid 2px white;
+}
+
+#flexSwitchCheckDefault:active {
+  background-color: rgb(108, 0, 147);
+  border: solid 2px white;
+}
+
+#flexSwitchCheckDefault:checked {
+  background-color: rgb(108, 0, 147);
+  border: solid 2px white;
+}
+
+#flexSwitchCheckDefault:not(:checked) {
+  background-color: #fff;
 }
