@@ -1,0 +1,23 @@
+{
+  "name": "socketio-single-chat-room",
+  "version": "1.0.0",
+  "description": "Single Chat Room using SocketIO",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ayangupta9/SocketIO-Single-Chat-Room.git"
+  },
+  "author": "Ayan Gupta",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ayangupta9/SocketIO-Single-Chat-Room/issues"
+  },
+  "homepage": "https://github.com/ayangupta9/SocketIO-Single-Chat-Room#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.12"
+  }
+}
