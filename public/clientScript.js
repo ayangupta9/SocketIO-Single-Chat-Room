@@ -1,4 +1,4 @@
-let socket = io('http://localhost:5000')
+let socket = io(window.location.href)
 
 const message = document.getElementById('message'),
   handle = document.getElementById('handle'),
