@@ -1,6 +1,5 @@
 const express = require('express')
 const SocketIO = require('socket.io')
-const randomColor = require('randomcolor')
 
 let app = express()
 const PORT = process.env.PORT || 5000
@@ -16,9 +15,26 @@ let io = SocketIO(server)
 
 io.on('connection', function (socket) {
   socket.on('chat', data => {
-    console.log(socket.id)
-    //   socket.emit('alreadyExistsError', `${data.handle} already exists`)
-    allHandles[handle.data] = socket.id
-    io.sockets.emit('chat', data)
+    if (
+      allHandles[socket.id] === undefined &&
+      !Object.values(allHandles).includes(data.handle.trim())
+    ) {
+      allHandles[socket.id] = data.handle.trim()
+      io.sockets.emit('chat', data)
+    } else {
+      if (allHandles[socket.id] !== data.handle.trim()) {
+        socket.emit('alreadyExistsError', `${data.handle} already exists`)
+      } else {
+        io.sockets.emit('chat', data)
+      }
+    }
+  })
+
+  socket.on('typing', data => {
+    socket.broadcast.emit('typing', data)
+  })
+
+  socket.on('notTyping', () => {
+    socket.broadcast.emit('notTyping', true)
   })
 })
